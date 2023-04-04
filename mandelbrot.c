@@ -1,26 +1,16 @@
-#include <SDL.h>
-#include <complex.h>
+#include <SDL2/SDL.h>
+#include <math.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-#define HEIGHT 100
-#define WIDTH 100
-#define MAX_ITER 25
+#define HEIGHT 1080
+#define WIDTH 1920
+#define MAX_ITER 1000
 
-int	mandelbrot(double complex c)
-{
-	double complex	z;
-	int		i;
-
-	z = 0;
-	i = 0;
-	while(i < 25)
-	{
-		z = z*z + c;
-		if(cabs(z) > 2)
-			return i;
-		i++;
-	}
-	return -1;
-}
+typedef struct s_complex{
+	double x;
+	double y;
+}	t_complex;
 
 void	SDL_ExitWithError()
 {
@@ -48,39 +38,36 @@ int	main()
 	{
 		while(SDL_PollEvent(&event))
 		{
-			switch(event.type)
-			{
-				case SDL_QUIT:
-					program_launched = SDL_FALSE;
-					break;
-				default:
-					break;
-			}
+			if(event.type == SDL_QUIT)
+				program_launched = SDL_FALSE;
 		}
 		for(int x = 0; x < WIDTH; x++)
 		{
 			for(int y = 0; y < HEIGHT; y++)
 			{
-				double real = (x - WIDTH / 2) / (0.5 * WIDTH) + 0.5;
-				double imag = (y - HEIGHT / 2) / (0.5 * HEIGHT);
-				complex double c = real + imag * I;
-				complex double z = 0;
+				t_complex c = {
+					(double)x / WIDTH * 3.5 - 2.5,
+					(double)y / HEIGHT * 2 - 1
+				};
+				t_complex z = {0,0};
 				int iterations = 0;
-				while(cabs(z) < 2 && iterations < MAX_ITER)	
+				while(iterations < MAX_ITER)
 				{
-					z = z * z + c;
+					if(z.x * z.x + z.y * z.y > 4)
+						break;
+					t_complex tmp = {
+						z.x * z.x - z.y * z.y + c.x,
+						2 * z.x *z.y + c.y
+					};
+					z = tmp;
 					iterations++;
 				}
-				if(iterations == MAX_ITER)
-					SDL_SetRenderDrawColor(render, 0, 0, 0, 255);
-				else
-				{
-					int color = iterations % 8 * 32;
-					SDL_SetRenderDrawColor(render, color, color, color, 255);
-				}
+				int color = iterations % 8 * 35;
+				SDL_SetRenderDrawColor(render, color, color, color, 255);
 				SDL_RenderDrawPoint(render, x, y);
 			}
 		}
+		SDL_RenderPresent(render);
 	}
 
 	SDL_DestroyRenderer(render);
