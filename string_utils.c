@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:26 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/25 22:26:55 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/26 16:47:27 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,20 +48,10 @@ double  ft_atod(char *s)
 
     int_part = 0;
     fractional_part = 0;
-    sign = 1;
     pow = 1;
     while ((*s >= 9 && *s <= 13) || *s == 32)
         s++;
-    if (*s == '-')
-    {
-        sign = -1;
-        s++;
-    }
-    else if (*s == '+')
-    {
-        sign = 1;
-        s++;
-    }
+    sign = check_sign(&s);
     while (*s != '.' && *s)
         int_part = (int_part * 10) + (*s++ - '0');
     if (*s == '.')
@@ -72,4 +62,21 @@ double  ft_atod(char *s)
         fractional_part = fractional_part + (*s++ - '0') * pow;
     }
     return ((int_part + fractional_part) * sign);
+}
+
+int is_double(char *s)
+{
+    while ((*s >= 9 && *s <= 13) || *s == 32)
+        s++;
+    if (*s == '+' || *s == '-')
+        s++;
+    if (*s == '\0')
+        return (0);
+    while (*s != '.' && *s)
+        s++;
+    if (*s == '.')
+        s++;
+    while (*s >= '0' && *s <= '9')
+        s++;
+    return (*s == '\0');
 }

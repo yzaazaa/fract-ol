@@ -14,10 +14,10 @@ all : $(NAME)
 
 $(NAME) : $(OBJS)
 	@echo "Compiling mandatory ..."
-	@$(CC)  -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
+	@$(CC) $(CLFAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
 %.o : %.c $(HEADER)
-	@$(CC)  -Imlx -c $<
+	@$(CC) $(CLFAGS) -Imlx -c $<
 
 clean :
 	@echo "Deleting object files ..."
@@ -26,3 +26,5 @@ clean :
 fclean :
 	@echo "Deleting all ..."
 	@rm -rf $(OBJS) $(NAME)
+
+re : fclean all

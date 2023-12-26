@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/25 22:19:33 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/26 16:52:04 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	handle_key(int keysym, t_fractal *fractal)
 {
 	if (keysym == 53)
 		handle_close(fractal);
- 	else if (keysym == 123)
+	else if (keysym == 123)
 		fractal->shift_x -= (0.5 * fractal->zoom);
 	else if (keysym == 124)
 		fractal->shift_x += (0.5 * fractal->zoom);
@@ -31,7 +31,7 @@ int	handle_key(int keysym, t_fractal *fractal)
 		fractal->shift_y += (0.5 * fractal->zoom);
 	else if (keysym == 125)
 		fractal->shift_y -= (0.5 * fractal->zoom);
- 	else if (keysym == 69)
+	else if (keysym == 69)
 		fractal->iterations += 10;
 	else if (keysym == 78)
 		fractal->iterations -= 10;
@@ -45,7 +45,6 @@ int	handle_mouse(int button, int x, int y, t_fractal *fractal)
 		fractal->zoom *= 0.9;
 	else if (button == 4)
 		fractal->zoom *= 1.1;
-	printf("%d\n", button);
 	fractal_render(fractal);
 	return (0);
 }

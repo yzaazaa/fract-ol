@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:45:41 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/25 22:21:57 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/26 16:46:55 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,19 @@ t_complex	square_complex(t_complex z)
 	res.real = (z.real * z.real) - (z.imaginary * z.imaginary);
 	res.imaginary = 2 * z.real * z.imaginary;
 	return (res);
+}
+
+int	check_sign(char **s)
+{
+	int	sign;
+
+	sign = 1;
+	if (*(*s) == '+')
+		(*s)++;
+	else if (*(*s) == '-')
+	{
+		sign = -1;
+		(*s)++;
+	}
+	return (sign);
 }
