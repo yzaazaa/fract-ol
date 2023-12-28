@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/26 16:48:56 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/28 22:53:46 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,15 @@
 static void	data_init(t_fractal *fractal, char **av)
 {
 	fractal->escape_value = 4;
-	fractal->iterations = 42;
+	fractal->iterations = 10;
 	fractal->shift_x = 0.0;
 	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
+	fractal->min_x = -2;
+	fractal->max_x = 2;
+	fractal->min_y = -2;
+	fractal->max_y = 2;
+	fractal->color = fractal->iterations;
 	if (!ft_strcmp(fractal->name, "julia"))
 	{
 		fractal->julia.x = ft_atod(av[2]);
