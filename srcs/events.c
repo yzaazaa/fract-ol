@@ -6,17 +6,17 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/28 22:32:29 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/30 23:55:07 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/fractol.h"
 
 int	handle_close(t_fractal *fractal)
 {
 	mlx_destroy_image(fractal->mlx_connection, fractal->image.image_ptr);
 	mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
-	exit(EXIT_SUCCESS);
+	exit(0);
 }
 
 void	reset(t_fractal *fractal)

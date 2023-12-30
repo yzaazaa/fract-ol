@@ -6,15 +6,15 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:45:41 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/28 23:09:11 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/30 23:55:23 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "fractol.h"
+#include "../includes/math.h"
 
-double  map(double unscaled_num, double new_min, double new_max, double old_max)
+double	map(double unscaled_num, double new_min, double new_max, double old_max)
 {
-    return ((new_max - new_min) * unscaled_num / old_max + new_min);
+	return ((new_max - new_min) * unscaled_num / old_max + new_min);
 }
 
 t_complex	sum_complex(t_complex z1, t_complex z2)

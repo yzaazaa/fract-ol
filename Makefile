@@ -1,8 +1,8 @@
-SRCS = main.c string_utils.c math_utils.c inits.c render.c events.c
+SRCS := srcs/main.c srcs/string_utils.c srcs/math_utils.c srcs/init.c srcs/render.c srcs/events.c srcs/burning_ship.c srcs/julia.c srcs/mandelbrot.c srcs/put_pixel.c
 
 OBJS = ${SRCS:.c=.o}
 
-HEADER = fractol.h
+HEADERS := includes/fractol.h includes/string.h includes/math.h
 
 NAME = fractol
 
@@ -16,8 +16,8 @@ $(NAME) : $(OBJS)
 	@echo "Compiling mandatory ..."
 	@$(CC) $(CLFAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
-%.o : %.c $(HEADER)
-	@$(CC) $(CLFAGS) -Imlx -c $<
+%.o : %.c $(HEADERS)
+	@$(CC) $(CLFAGS) -Imlx -c $< -o $@
 
 clean :
 	@echo "Deleting object files ..."
