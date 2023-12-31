@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   init.c                                             :+:      :+:    :+:   */
+/*   init_fractal.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 13:34:37 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 13:40:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,17 +44,17 @@ void	fractal_init(t_fractal *fractal, char **av)
 {
 	fractal->mlx_connection = mlx_init();
 	if (!fractal->mlx_connection)
-		malloc_error();
+		ft_perror();
 	fractal->mlx_window = mlx_new_window(fractal->mlx_connection,
 			WIDTH, HEIGHT, fractal->name);
 	if (!fractal->mlx_window)
-		malloc_error();
+		ft_perror();
 	fractal->image.image_ptr = mlx_new_image(fractal->mlx_connection,
 			WIDTH, HEIGHT);
 	if (!fractal->image.image_ptr)
 	{
 		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
-		malloc_error();
+		ft_perror();
 	}
 	fractal->image.pixels = mlx_get_data_addr(fractal->image.image_ptr,
 			&fractal->image.bpp,

@@ -1,4 +1,4 @@
-SRCS := srcs/main.c srcs/string_utils.c srcs/math_utils.c srcs/init.c srcs/render.c srcs/events.c srcs/burning_ship.c srcs/julia.c srcs/mandelbrot.c srcs/put_pixel.c
+SRCS := srcs/main.c srcs/string_utils.c srcs/math_utils.c srcs/init_fractal.c srcs/render_fractal.c srcs/events.c srcs/burning_ship.c srcs/julia.c srcs/mandelbrot.c srcs/put_pixel.c
 
 OBJS = ${SRCS:.c=.o}
 
