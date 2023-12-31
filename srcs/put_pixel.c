@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 00:10:47 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 00:58:25 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 13:08:52 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	my_pixel_put(int x, int y, t_image *img, int color)
 	int	offset;
 
 	offset = (y * img->line_len) + (x * (img->bpp / 8));
-	*(int *)(img->pixels + offset) = color;
+	*(unsigned int *)(img->pixels + offset) = color;
 }

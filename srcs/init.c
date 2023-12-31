@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 01:06:46 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 13:34:37 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	init_data(t_fractal *fractal, char **av)
 	fractal->max_x = 2;
 	fractal->min_y = -2;
 	fractal->max_y = 2;
-	fractal->color = fractal->iterations;
+	fractal->color = 0x061A80;
 	if (!ft_strcmp(fractal->name, "julia"))
 	{
 		fractal->julia.x = ft_atod(av[2]);
@@ -33,9 +33,11 @@ static void	init_data(t_fractal *fractal, char **av)
 
 static void	init_events(t_fractal *fractal)
 {
-	mlx_hook(fractal->mlx_window, KEY_PRESS, KEYPRESS_MASK, handle_key, fractal);
-	mlx_hook(fractal->mlx_window, BUTTON_PRESS, BUTTONPRESS_MASK, handle_mouse, fractal);
-	mlx_hook(fractal->mlx_window, DESTROY_NOTIFY, STRUCTURENOTIFY_MASK, handle_close, fractal);
+	mlx_hook(fractal->mlx_window, KEY_PRESS, (1L << 0), handle_key, fractal);
+	mlx_hook(fractal->mlx_window, BUTTON_PRESS, (1L << 2),
+		handle_mouse, fractal);
+	mlx_hook(fractal->mlx_window, DESTROY_NOTIFY, (1L << 17),
+		handle_close, fractal);
 }
 
 void	fractal_init(t_fractal *fractal, char **av)

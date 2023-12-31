@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:32 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 01:02:56 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 13:14:29 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
-# define PSYCHEDELIC_PURPLE 0x660066
 # define WIDTH 800
 # define HEIGHT 800
 

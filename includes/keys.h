@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 01:00:21 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 01:07:13 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 12:30:16 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,5 @@
 # define KEY_PRESS 2
 # define BUTTON_PRESS 4
 # define DESTROY_NOTIFY 17
-# define KEYPRESS_MASK (1L << 0)
-# define BUTTONPRESS_MASK (1L << 2)
-# define STRUCTURENOTIFY_MASK (1L << 17)
 
 #endif

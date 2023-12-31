@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 01:07:26 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 13:36:35 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,13 @@ void	reset(t_fractal *fractal)
 	fractal->max_y = 2;
 }
 
+static void	change_color(t_fractal *fractal)
+{
+	if (fractal->color >= 400000)
+		fractal->color = fractal->iterations;
+	fractal->color += 10;
+}
+
 int	handle_key(int keysym, t_fractal *fractal)
 {
 	if (keysym == ESC)
@@ -49,7 +56,7 @@ int	handle_key(int keysym, t_fractal *fractal)
 	else if (keysym == R)
 		reset(fractal);
 	else if (keysym == C)
-		fractal->color += 10;
+		change_color(fractal);
 	else
 		return (0);
 	fractal_render(fractal);
