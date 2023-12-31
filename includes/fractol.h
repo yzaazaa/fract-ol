@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:32 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/30 23:16:01 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 01:02:56 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 
 # include "string.h"
+# include "keys.h"
 # include <mlx.h>
 
 # define BLACK 0x000000

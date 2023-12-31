@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/30 23:59:38 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2023/12/31 01:06:46 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ static void	init_data(t_fractal *fractal, char **av)
 
 static void	init_events(t_fractal *fractal)
 {
-	mlx_hook(fractal->mlx_window, 2, (1L << 0), handle_key, fractal);
-	mlx_hook(fractal->mlx_window, 4, (1L << 2), handle_mouse, fractal);
-	mlx_hook(fractal->mlx_window, 17, (1L << 17), handle_close, fractal);
+	mlx_hook(fractal->mlx_window, KEY_PRESS, KEYPRESS_MASK, handle_key, fractal);
+	mlx_hook(fractal->mlx_window, BUTTON_PRESS, BUTTONPRESS_MASK, handle_mouse, fractal);
+	mlx_hook(fractal->mlx_window, DESTROY_NOTIFY, STRUCTURENOTIFY_MASK, handle_close, fractal);
 }
 
 void	fractal_init(t_fractal *fractal, char **av)
