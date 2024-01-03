@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/31 01:00:21 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 12:30:16 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/03 22:54:42 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@
 # define MINUS 78
 # define R 15
 # define C 8
+# define V 9
 # define MOUSE_WHEEL_UP 4
 # define MOUSE_WHEEL_DOWN 5
 # define KEY_PRESS 2
