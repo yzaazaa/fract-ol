@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/30 22:54:00 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/30 23:55:07 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/03 15:41:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ void	handle_pixel_burningship(int x, int y, t_fractal *fractal)
 {
 	t_complex	z;
 	t_complex	c;
-	double		temp;
 	int			i;
 	int			color;
 
