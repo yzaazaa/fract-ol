@@ -6,13 +6,13 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:28 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 13:15:45 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/03 15:51:09 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/fractol.h"
 
-static void	print_message(void)
+static void	print_instructions(void)
 {
 	ft_putendl_fd("Usage: ./fractol [FRACTAL]", 2);
 	ft_putendl_fd("For mandelbrot: ./fractol mandelbrot", 2);
@@ -46,7 +46,7 @@ int	main(int ac, char **av)
 	}
 	else
 	{
-		print_message();
+		print_instructions();
 		exit(1);
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:26 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 13:40:00 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/03 15:47:32 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,9 @@ void	ft_putendl_fd(char *str, int fd)
 	write(fd, "\n", 1);
 }
 
-void	ft_perror(void)
+void	ft_error(char *s)
 {
-	perror("Malloc error");
+	ft_putendl_fd(s, 2);
 	exit(1);
 }
 

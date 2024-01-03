@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2023/12/31 13:40:32 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/03 15:50:03 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,22 +44,27 @@ void	fractal_init(t_fractal *fractal, char **av)
 {
 	fractal->mlx_connection = mlx_init();
 	if (!fractal->mlx_connection)
-		ft_perror();
+		ft_error("Failed to initialize connection to X11 Server!");
 	fractal->mlx_window = mlx_new_window(fractal->mlx_connection,
 			WIDTH, HEIGHT, fractal->name);
 	if (!fractal->mlx_window)
-		ft_perror();
+		ft_error("Failed to create new window!");
 	fractal->image.image_ptr = mlx_new_image(fractal->mlx_connection,
 			WIDTH, HEIGHT);
 	if (!fractal->image.image_ptr)
 	{
 		mlx_destroy_window(fractal->mlx_connection, fractal->mlx_window);
-		ft_perror();
+		ft_error("Failed to create new image!");
 	}
 	fractal->image.pixels = mlx_get_data_addr(fractal->image.image_ptr,
 			&fractal->image.bpp,
 			&fractal->image.line_len,
 			&fractal->image.endian);
+	if (!fractal->image.pixels)
+	{
+		handle_close(fractal);
+		ft_error("Failed to get image data!");
+	}
 	init_data(fractal, av);
 	init_events(fractal);
 }
