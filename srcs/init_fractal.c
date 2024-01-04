@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/03 23:11:42 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/04 23:07:56 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static void	init_data(t_fractal *fractal, char **av)
 	if (!ft_strcmp(fractal->name, "julia"))
 	{
 		fractal->max_y = -2;
-		fractal->min_y = 2;		
+		fractal->min_y = 2;
 	}
 	else
 	{
