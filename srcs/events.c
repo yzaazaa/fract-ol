@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/05 03:44:56 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 04:16:44 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,15 @@ static void	change_color(t_fractal *fractal, char c)
 {
 	if (c == 'c')
 	{
-		if (fractal->color >= 400000)
+		if (fractal->color >= BLUE)
 			fractal->color = fractal->iterations;
-		fractal->color += 10;
+		fractal->color += 13;
 	}
 	else
 	{
 		if (fractal->color <= 10)
-			fractal->color = fractal->iterations;
-		fractal->color -= 10;
+			fractal->color = BLUE;
+		fractal->color -= 13;
 	}
 }
 
