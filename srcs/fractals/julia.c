@@ -1,28 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tricorn.c                                          :+:      :+:    :+:   */
+/*   julia.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/05 00:57:11 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/05 01:19:05 by yzaazaa          ###   ########.fr       */
+/*   Created: 2023/12/30 22:54:42 by yzaazaa           #+#    #+#             */
+/*   Updated: 2024/01/05 04:37:08 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/fractol.h"
+#include "../../includes/fractol.h"
 
-static t_complex	calculate_tricorn(t_complex z, t_complex c)
-{
-	double	tmp;
-
-	tmp = -2 * z.real * z.imaginary + c.imaginary;
-	z.real = z.real * z.real - z.imaginary * z.imaginary + c.real;
-	z.imaginary = tmp;
-	return (z);
-}
-
-void	handle_pixel_tricorn(int x, int y, t_fractal *fractal)
+void	handle_pixel_julia(int x, int y, t_fractal *fractal)
 {
 	t_complex	z;
 	t_complex	c;
@@ -33,12 +23,12 @@ void	handle_pixel_tricorn(int x, int y, t_fractal *fractal)
 		+ fractal->shift_x;
 	z.imaginary = map(y, fractal->min_y, fractal->max_y, HEIGHT)
 		+ fractal->shift_y;
-	c.real = z.real;
-	c.imaginary = z.imaginary;
+	c.real = fractal->julia.x;
+	c.imaginary = fractal->julia.y;
 	i = 0;
 	while (i++ < fractal->iterations)
 	{
-		z = calculate_tricorn(z, c);
+		z = sum_complex(square_complex(z), c);
 		if ((z.real * z.real) + (z.imaginary * z.imaginary)
 			> fractal->escape_value)
 		{
