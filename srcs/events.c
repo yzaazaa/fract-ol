@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/05 04:16:44 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 04:30:24 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,9 @@ int	handle_key(int keysym, t_fractal *fractal)
 	else if (keysym == ARR_RIGHT)
 		fractal->shift_x += (0.5 * fractal->zoom);
 	else if (keysym == ARR_UP)
-		fractal->shift_y += (0.5 * fractal->zoom);
-	else if (keysym == ARR_DOWN)
 		fractal->shift_y -= (0.5 * fractal->zoom);
+	else if (keysym == ARR_DOWN)
+		fractal->shift_y += (0.5 * fractal->zoom);
 	else if (keysym == PLUS)
 		fractal->iterations += 10;
 	else if (keysym == MINUS)
