@@ -28,3 +28,5 @@ fclean :
 	@rm -rf $(OBJS) $(NAME)
 
 re : fclean all
+
+.PHONY : fclean clean
