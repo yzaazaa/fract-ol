@@ -12,8 +12,10 @@ CC = cc
 
 all : $(NAME)
 
+bonus : $(NAME)
+
 $(NAME) : $(OBJS)
-	@echo "Compiling mandatory ..."
+	@echo "Compiling fractol ..."
 	@$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJS) -o $(NAME)
 
 %.o : %.c $(HEADERS)
