@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:32 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/05 01:05:56 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 04:15:09 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 
 # define BLACK 0x000000
 # define WHITE 0xFFFFFF
-# define BLUE 0x061A80
+# define BLUE 1290
 # define WIDTH 800
 # define HEIGHT 800
 
