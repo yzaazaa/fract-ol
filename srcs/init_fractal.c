@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:30 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/04 23:07:56 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 01:10:56 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,8 @@ static void	init_data(t_fractal *fractal, char **av)
 	fractal->shift_x = 0.0;
 	fractal->shift_y = 0.0;
 	fractal->zoom = 1.0;
-	if (!ft_strcmp(fractal->name, "julia"))
-	{
-		fractal->max_y = -2;
-		fractal->min_y = 2;
-	}
-	else
-	{
-		fractal->min_y = -2;
-		fractal->max_y = 2;
-	}
+	fractal->min_y = 2;
+	fractal->max_y = -2;
 	fractal->min_x = -2;
 	fractal->max_x = 2;
 	fractal->color = BLUE;
@@ -52,7 +44,7 @@ void	fractal_init(t_fractal *fractal, char **av)
 {
 	fractal->mlx_connection = mlx_init();
 	if (!fractal->mlx_connection)
-		ft_error("Failed to initialize connection to X11 Server!");
+		ft_error("Failed to initialize connection!");
 	fractal->mlx_window = mlx_new_window(fractal->mlx_connection,
 			WIDTH, HEIGHT, fractal->name);
 	if (!fractal->mlx_window)

@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:21:32 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/03 21:27:46 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 01:05:56 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,8 +60,8 @@ typedef struct s_fractal
 void		fractal_init(t_fractal *fractal, char **av);
 void		my_pixel_put(int x, int y, t_image *img, int color);
 void		handle_pixel_mandelbrot(int x, int y, t_fractal *fractal);
-void		handle_pixel_burningship(int x, int y, t_fractal *fractal);
 void		handle_pixel_julia(int x, int y, t_fractal *fractal);
+void		handle_pixel_tricorn(int x, int y, t_fractal *fractal);
 void		fractal_render(t_fractal *fractal);
 int			handle_key(int keysym, t_fractal *fractal);
 int			handle_mouse(int button, int x, int y, t_fractal *fractal);

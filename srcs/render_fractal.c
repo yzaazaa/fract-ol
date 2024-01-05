@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 20:30:29 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/03 15:41:23 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 01:05:35 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ void	fractal_render(t_fractal *fractal)
 				handle_pixel_mandelbrot(x, y, fractal);
 			else if (!ft_strcmp(fractal->name, "julia"))
 				handle_pixel_julia(x, y, fractal);
-			else if (!ft_strcmp(fractal->name, "burning ship")
-				|| !ft_strcmp(fractal->name, "burning"))
-				handle_pixel_burningship(x, y, fractal);
+			else if (!ft_strcmp(fractal->name, "tricorn")
+				|| !ft_strcmp(fractal->name, "mandelbar"))
+				handle_pixel_tricorn(x, y, fractal);
 			x++;
 		}
 		y++;

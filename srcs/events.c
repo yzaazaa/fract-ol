@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/03 23:03:15 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 01:05:23 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static void	change_color(t_fractal *fractal, char c)
 			fractal->color = fractal->iterations;
 		fractal->color -= 10;
 	}
-	printf("%d\n", fractal->color);
 }
 
 int	handle_key(int keysym, t_fractal *fractal)
