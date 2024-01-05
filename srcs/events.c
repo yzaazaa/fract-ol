@@ -6,7 +6,7 @@
 /*   By: yzaazaa <yzaazaa@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/25 21:18:16 by yzaazaa           #+#    #+#             */
-/*   Updated: 2024/01/05 01:05:23 by yzaazaa          ###   ########.fr       */
+/*   Updated: 2024/01/05 03:44:56 by yzaazaa          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ void	reset(t_fractal *fractal)
 	fractal->zoom = 1.0;
 	fractal->min_x = -2;
 	fractal->max_x = 2;
-	fractal->min_y = -2;
-	fractal->max_y = 2;
+	fractal->min_y = 2;
+	fractal->max_y = -2;
 }
 
 static void	change_color(t_fractal *fractal, char c)
