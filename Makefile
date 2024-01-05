@@ -2,7 +2,7 @@ SRCS := srcs/main.c srcs/string_utils.c srcs/math_utils.c srcs/init_fractal.c sr
 
 OBJS = ${SRCS:.c=.o}
 
-HEADERS := includes/fractol.h includes/string.h includes/math.h
+HEADERS := includes/fractol.h includes/string.h includes/math.h includes/keys.h
 
 NAME = fractol
 
